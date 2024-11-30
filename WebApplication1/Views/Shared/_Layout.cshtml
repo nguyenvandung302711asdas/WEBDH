@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/reponsives.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/test.css" rel="stylesheet" />
+    @*<link href="~/Content/reponsives.css" rel="stylesheet" />*@
+
+
+</head>
+<body>  
+    <header>
+        <nav>
+            <div class="container-custom">
+                <ul class="nav-menu">
+                    <!-- Logo -->
+
+                    <li>
+                        <a href="@Url.Action("Xuhuong", "Xuhuong")" class="logo-link">
+                            <img src="https://www.watchstore.vn/images/config/logo-watchstore3-9-24_1725292445.webp" alt="Logo" style="width: 155px" />
+                        </a>
+                    </li>
+
+                    <!-- Static Links -->
+                    <li><a href="#" class="tieude">Giới thiệu</a></li>
+                    <li><a href="#" class="tieude" style="color: red">Xu Hướng 2024</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="tieude dropdown-toggle">Menu <i class="fa-solid fa-sort-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="row">
+                                <!-- Price Range -->
+                                <div class="column">
+                                    <b>Hãng</b>
+                                    <hr />
+                                    <a href="#">
+                                        Casio
+                                    </a>
+                                    <a href="#">
+                                        Citizen
+                                    </a>
+                                    <a href="#">
+                                        Bentley
+                                    </a>
+                                    <a href="#">
+                                        Olym Pianus
+                                    </a>
+                                    <a href="#">
+                                        G-Shock
+                                    </a>
+                                    <a href="#">
+                                        Orient
+                                    </a>
+                                    <a href="#">
+                                        Seiko
+                                    </a>
+                                    <a href="#"> Tissot</a>
+                                </div>
+
+                                <!-- Popular Brands -->
+                                <div class="column">
+                                    <b>Quốc Gia Sản Xuất</b>
+                                    <hr />
+                                    <a href="#">  Đức</a>
+                                    <a href="#">
+                                        Anh
+                                    </a>
+                                    <a href="#">
+                                        Ba Lan
+                                    </a>
+                                    <a href="#">
+                                        Hàn Quốc
+                                    </a>
+                                    <a href="#">
+                                        Pháp
+                                    </a>
+                                    <a href="#">
+                                        Nhật Bản
+                                    </a>
+                                    <a href="#">
+                                        Trung Quốc
+                                    </a>
+                                    <a href="#">
+                                        Hoa Kỳ
+                                    </a>
+                                    <a href="#">
+                                        Thụy Sĩ
+                                    </a>
+                                    <a href="#">Ý</a>
+                                </div>
+
+                                <!-- Strap Types -->
+                                <div class="column">
+                                    <b>Loại Dây</b>
+                                    <hr />
+                                    <a href="#">
+                                        Dây Titanium
+                                    </a>
+                                    <a href="#">
+                                        Dây Thép
+                                    </a>
+                                    <a href="#">
+                                        Dây Kim Loại
+                                    </a>
+                                    <a href="#">
+                                        Dây Nhựa
+                                    </a>
+                                    <a href="#">
+                                        Dây Bạc
+                                    </a>
+                                    <a href="#">
+                                        Dây Inox
+                                    </a>
+                                    <a href="#">
+                                        Dây Da
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Dropdown for 'Menu' -->
+                    <li class="dropdown" style="align-items:center">
+                        <a href="#" class="tieude">Nữ <i class="fa-solid fa-sort-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="row">
+                                <!-- Price Range -->
+                                <div class="column">
+                                    <b>Mức Giá</b>
+                                    <hr />
+                                    <a href="#">Dưới 1 Triệu</a>
+                                    <a href="#">Từ 1 - 3 Triệu</a>
+                                    <a href="#">Từ 3 - 6 Triệu</a>
+                                    <a href="#">Từ 6 - 9 Triệu</a>
+                                    <a href="#">Trên 9 Triệu</a>
+                                </div>
+
+                                <!-- Popular Brands -->
+                                <div class="column">
+                                    <b>Hãng</b>
+                                    <hr />
+                                    <a href="#">
+                                        Casio
+                                    </a>
+                                    <a href="#">
+                                        Citizen
+                                    </a>
+                                    <a href="#">
+                                        Bentley
+                                    </a>
+                                    <a href="#">
+                                        Olym Pianus
+                                    </a>
+                                    <a href="#">
+                                        G-Shock
+                                    </a>
+                                    <a href="#">
+                                        Orient
+                                    </a>
+                                    <a href="#">
+                                        Seiko
+                                    </a>
+                                    <a href="#"> Tissot</a>
+                                </div>
+
+
+                                <!-- Strap Types -->
+                                <div class="column">
+                                    <b>Loại Máy</b>
+                                    <hr />
+                                    <a href="#">Mechanical</a>
+                                    <a href="#">Cơ</a>
+                                    <a href="#">Quartz</a>
+                                    <a href="#"> Automatic</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="dropdown" style="align-items:center">
+                        <a href="#" class="tieude">Nam <i class="fa-solid fa-sort-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="row">
+                                <!-- Price Range -->
+                                <div class="column">
+                                    <b>Mức Giá</b>
+                                    <hr />
+                                    <a href="#">Dưới 1 Triệu</a>
+                                    <a href="#">Từ 1 - 3 Triệu</a>
+                                    <a href="#">Từ 3 - 6 Triệu</a>
+                                    <a href="#">Từ 6 - 9 Triệu</a>
+                                    <a href="#">Trên 9 Triệu</a>
+                                </div>
+
+                                <!-- Popular Brands -->
+                                <div class="column">
+                                    <b>Hãng</b>
+                                    <hr />
+                                    <a href="#">
+                                        Casio
+                                    </a>
+                                    <a href="#">
+                                        Citizen
+                                    </a>
+                                    <a href="#">
+                                        Bentley
+                                    </a>
+                                    <a href="#">
+                                        Olym Pianus
+                                    </a>
+                                    <a href="#">
+                                        G-Shock
+                                    </a>
+                                    <a href="#">
+                                        Orient
+                                    </a>
+                                    <a href="#">
+                                        Seiko
+                                    </a>
+                                    <a href="#"> Tissot</a>
+                                </div>
+
+
+                                <!-- Strap Types -->
+                                <div class="column">
+                                    <b>Loại Máy</b>
+                                    <hr />
+                                    <a href="#">Mechanical</a>
+                                    <a href="#">Cơ</a>
+                                    <a href="#">Quartz</a>
+                                    <a href="#"> Automatic</a>
+                                </div>
+
+                                <!-- Watch Movement Types -->
+
+
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!-- Other Menu Items -->
+                    <li><a href="#" class="tieude">Luxury</a></li>
+                    <li><a href="#" class="tieude">Cao cấp</a></li>
+
+                    <!-- Search Bar -->
+                    <li class="search-container">
+                        <form action="@Url.Action("Find", "Xuhuong")" method="get" id="searchForm">
+                            <input type="text" name="searchQuery" placeholder="Tìm là thấy..." />
+                            <i class="fa-solid fa-magnifying-glass search-icon" onclick="submitForm()"></i>
+                        </form>
+                    </li>
+                    <script>
+                         function submitForm() {
+                             var searchQuery = document.getElementById('searchQuery').value;
+
+                             if (searchQuery) {
+                                 var actionUrl = '@Url.Action("BanHang", "Xuhuong", new { page = 1, filterType = "" })';
+                                 actionUrl = actionUrl + "?search=" + encodeURIComponent(searchQuery);
+                                 document.getElementById('searchForm').action = actionUrl;
+                             }
+                             document.getElementById('searchForm').submit();
+                        }
+                      
+                    </script>
+
+
+                    <!-- Cart and User Account -->
+                    <li class="icon-links">
+                        <a href="@Url.Action("GioHang", "Xuhuong")"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+                    <li class="dangnhap">
+                        @if (Session["UserLoggedIn"] != null)
+                        {
+                            <span class="user-icon">👤 @Session["UserLoggedIn"]</span>
+
+                            <!-- User Menu -->
+                            <div class="logout-menu hidden">
+                                <a href="@Url.Action("Logout", "Account")" class="logout-button">Logout</a>
+                                <a href="@Url.Action("HistoryOrder", "Xuhuong")" class="logout-button">History</a>
+                                <a href="@Url.Action("ProfileUser", "Account")" class="logout-button">Profile</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Account")" class="login-button">Login</a>
+                        }
+                    </li>
+                </ul>
+            </div>
+
+            <!-- JavaScript for dropdown toggle -->
+            <script>
+
+                document.querySelector('.user-icon').addEventListener('click', function () {
+                    const logoutMenu = document.querySelector('.logout-menu');
+                    logoutMenu.classList.toggle('hidden');
+                });
+
+                // Hide user menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    const userIcon = document.querySelector('.user-icon');
+                    const logoutMenu = document.querySelector('.logout-menu');
+                    if (!userIcon.contains(event.target) && !logoutMenu.contains(event.target)) {
+                        logoutMenu.classList.add('hidden');
+                    }
+                });
+
+                // Submit search form on icon click
+                function submitForm() {
+                    document.getElementById("searchForm").submit();
+                }
+
+
+                //const dropdowns = document.querySelectorAll('.dropdown');
+                //dropdowns.forEach(function (dropdown) {
+                //    dropdown.addEventListener('click', function () {
+                //        const dropdownContent = this.querySelector('.dropdown-content');
+                //        dropdownContent.classList.toggle('hidden');
+                //    });
+                //});
+            </script>
+        </nav>
+
+    </header>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="footer-section">
+            <div class="wrapper">
+                <div class="flex-row">
+                    <div class="footer-column">
+                        <h4>LIÊN HỆ HỖ TRỢ</h4>
+                        <ul class="no-bullets">
+                            <li><a href="#">Giới thiệu về WatchStore</a></li>
+                            <li><a href="#">Phản ánh - Khiếu nại</a></li>
+                            <li><a href="#">Chứng nhận đại lý</a></li>
+                            <li><a href="#">Tin tức công ty</a></li>
+                            <li><a href="#">Top list đồng hồ</a></li>
+                            <li><a href="#">Kiến thức đồng hồ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>CHÍNH SÁCH CHUNG</h4>
+                        <ul class="no-bullets">
+                            <li><a href="#">Điều khoản thanh toán </a></li>
+                            <li><a href="#">Chính sách bảo hành</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Chính sách vận chuyển </a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>CỬA HÀNG HÀ NỘI & HCM</h4>
+                        <ul class="no-bullets">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt" style="color: orange; background-color: #000000"></i>
+                                    97 Trần Đại Nghĩa, HBT, Hà Nội
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt" style="color: orange; background-color: #000000"></i>
+                                    58 Trần Đăng Ninh, Cầu Giấy, Hà Nội
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt" style="color: orange; background-color: #000000"></i>
+                                    90 Lê Văn Sỹ, P11, Phú Nhuận, HCM
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt" style="color: orange; background-color: #000000"></i>
+                                    61 Quang Trung, P10, Gò Vấp, HCM
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>LIÊN HỆ CHÚNG TÔI</h4>
+                        <ul class="no-bullets">
+                            <li><a href="#">Hotline: 035844654</a></li>
+                            <li><a href="#">Hotline: 065648949</a></li>
+                            <li><a href="#">Hotline: 025649846</a></li>
+                            <li><a href="#">Hotline: 026261999</a></li>
+                        </ul>
+                        <h4>THEO DỖI CHÚNG TÔI TẠI</h4>
+                        <div class="social-icons" style="background-color: #000000">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @*<script src="~/Scripts/js.js"></script>*@
+</body>
+</html>
+

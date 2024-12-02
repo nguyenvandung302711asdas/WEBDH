@@ -125,62 +125,51 @@ namespace admin4.Controllers
         public ActionResult Detail(int? id)
         {
             WatchStoreEntities9 db = new WatchStoreEntities9();
-            Product pro = db.Products.Where(row => row.ProductID == id).FirstOrDefault();
-            Feedback f = db.Feedbacks.Where(row => row.ProductID == id).FirstOrDefault();
-            if (f == null)
+
+            // Lấy thông tin sản phẩm
+            Product pro = db.Products.FirstOrDefault(row => row.ProductID == id);
+            if (pro == null)
             {
-                f = new Feedback
-                {
-                    ProductID = id,
-                    Rating = 0
-                };
-                db.Feedbacks.Add(f);
-                db.SaveChanges();
+                // Nếu không tìm thấy sản phẩm
+                ViewBag.AverageRating = 0;
+                ViewBag.TotalQuantitySold = 0;
+                ViewBag.StockQuantity = 0;
+                ViewBag.feedback = new Feedback { ProductID = id, Rating = 0 };
+                ViewBag.ProductImage = new List<ProductImageViewModel>();
+                return View(); // Trả về View rỗng
             }
-            else if (f.Rating == null)
+
+            // Lấy thông tin phản hồi
+            Feedback f = db.Feedbacks.FirstOrDefault(row => row.ProductID == id) ?? new Feedback
             {
-                f.Rating = 0;
-            }
+                ProductID = id.Value,
+                Rating = 0
+            };
+
+            if (f.Rating == null) f.Rating = 0;
             ViewBag.feedback = f;
 
-            //ban detail
-            Detail d = db.Details.Where(row => row.ProductID == id).FirstOrDefault();
+            // Lấy chi tiết sản phẩm
+            Detail d = db.Details.FirstOrDefault(row => row.ProductID == id);
             ViewBag.detail = d;
-            // Truy vấn lấy thông tin sản phẩm và tổng số lượng đã bán
+
+            // Truy vấn tổng số lượng đã bán
             var productSales = db.OrderItems
-                                 .Join(db.Orders,
-                                       oi => oi.OrderID,
-                                       o => o.OrderID,
-                                       (oi, o) => new { oi, o }) // Join OrderItem với Order
-                                 .Join(db.Products,
-                                       temp => temp.oi.ProductID,
-                                       p => p.ProductID,
-                                       (temp, p) => new { temp.oi, temp.o, p }) // Join với Product
-                                 .Where(temp => temp.p.ProductID == id && temp.o.Status == "Approved") // Lọc sản phẩm theo id và trạng thái Approved
-                                 .GroupBy(temp => new { temp.p.ProductID, temp.p.ProductName })
-                                 .Select(g => new
-                                 {
-                                     ProductID = g.Key.ProductID,
-                                     ProductName = g.Key.ProductName,
-                                     TotalQuantitySold = g.Sum(x => x.oi.Quantity)
-                                 })
-                                 .FirstOrDefault(); // Lấy sản phẩm đầu tiên (chỉ 1 sản phẩm)
+                .Join(db.Orders, oi => oi.OrderID, o => o.OrderID, (oi, o) => new { oi, o })
+                .Where(temp => temp.oi.ProductID == id && temp.o.Status == "Approved")
+                .GroupBy(temp => temp.oi.ProductID)
+                .Select(g => new
+                {
+                    TotalQuantitySold = g.Sum(x => x.oi.Quantity)
+                })
+                .FirstOrDefault();
 
-            // Kiểm tra nếu không tìm thấy sản phẩm
-            if (productSales == null)
-            {
-                return HttpNotFound("Không tìm thấy sản phẩm hoặc chưa có dữ liệu bán.");
-            }
+            ViewBag.TotalQuantitySold = productSales?.TotalQuantitySold ?? 0;
 
-            // Truyền thông tin qua ViewBag
-            ViewBag.ProductID = productSales.ProductID;
-            ViewBag.ProductName = productSales.ProductName;
-            ViewBag.TotalQuantitySold = productSales.TotalQuantitySold;
+            // Lấy số lượng tồn kho
+            ViewBag.StockQuantity = pro.StockQuantity ?? 0;
 
-
-
-
-            //Lay ra hinh anh
+            // Lấy hình ảnh sản phẩm
             var productImages = db.Images_Default
                 .Where(img => img.ProductID == id)
                 .Select(img => new ProductImageViewModel { Hinh = img.URL_Images_Default })
@@ -188,10 +177,9 @@ namespace admin4.Controllers
 
             ViewBag.ProductImage = productImages;
 
-
-
             return View(pro);
         }
+
 
         public ActionResult Create()
         {
@@ -212,70 +200,7 @@ namespace admin4.Controllers
         }
 
 
-        //[HttpPost]
-        //public ActionResult Create(Products product, HttpPostedFileBase ImageUrl)
-        //{
-        //    using (WatchStoreEntities7 db = new WatchStoreEntities7())
-        //    {
-        //        // Check if the SupplierId is valid
-        //        var supplierExists = db.Supplier.Any(s => s.SupplierID == product.SupplierID);
-        //        if (!supplierExists)
-        //        {
-        //            // Add an error message if the Supplier does not exist
-        //            ModelState.AddModelError("", "The selected supplier does not exist.");
-        //            return View(product); // Return the same view with the error
-        //        }
-
-        //        // Check if the Brand is valid
-        //        var brandExists = db.Brand.Any(b => b.BrandID == product.BrandID);
-        //        if (!brandExists)
-        //        {
-        //            // Add an error message if the Brand does not exist
-        //            ModelState.AddModelError("", "The selected Brand does not exist.");
-        //            return View(product); // Return the same view with the error
-        //        }
-
-        //        // Check if the Category is valid
-        //        var categoryExists = db.Category.Any(c => c.CategoryID == product.CategoryID);
-        //        if (!categoryExists)
-        //        {
-        //            // Add an error message if the Category does not exist
-        //            ModelState.AddModelError("", "The selected Category does not exist.");
-        //            return View(product); // Return the same view with the error
-        //        }
-
-        //        // Handle the image file if it was uploaded
-        //        if (ImageUrl != null && ImageUrl.ContentLength > 0)
-        //        {
-        //            // Create directory path for the brand and product
-        //            var brand = db.Brand.FirstOrDefault(b => b.BrandID == product.BrandID)?.BrandName;
-        //            var productName = product.ProductName;
-        //            var directoryPath = Path.Combine(Server.MapPath("~/Content/img/"), brand, productName);
-
-        //            // Ensure directory exists
-        //            if (!Directory.Exists(directoryPath))
-        //            {
-        //                Directory.CreateDirectory(directoryPath);
-        //            }
-
-        //            // Generate the image file name and path
-        //            string fileName = Path.GetFileName(ImageUrl.FileName);
-        //            string filePath = Path.Combine(directoryPath, fileName);
-
-        //            // Save the image file to the directory
-        //            ImageUrl.SaveAs(filePath);
-
-        //            // Save relative path to the database (adjust if needed based on your file storage setup)
-        //            product.ImageUrl = Path.Combine(fileName);
-        //        }
-
-        //        // Add the product to the database
-        //        db.Products.Add(product);
-        //        db.SaveChanges();
-
-        //        return RedirectToAction("Index");
-        //    }
-        //}
+       
         [HttpPost]
         public ActionResult Create(Product product, HttpPostedFileBase ImageUrl, HttpPostedFileBase Image1, HttpPostedFileBase Image2, HttpPostedFileBase Image3, HttpPostedFileBase Image4, HttpPostedFileBase Image5, HttpPostedFileBase ImageDetail , string URLVideo)
         {
@@ -319,10 +244,10 @@ namespace admin4.Controllers
                     return View(product);
                 }
 
-                // Cập nhật thông tin mô tả cho sản phẩm nếu sản phẩm hợp lệ
-                productToUpdate.Description = product.Description;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //// Cập nhật thông tin mô tả cho sản phẩm nếu sản phẩm hợp lệ
+                //productToUpdate.Description = product.Description;
+                //db.SaveChanges();
+                ////return RedirectToAction("Index");
 
 
                 // Handle the image file if it was uploaded
@@ -390,6 +315,7 @@ namespace admin4.Controllers
                        
                         }
                         product.AverageRating = 0;
+                        product.Description = "asd";
                         product.Check_Remove = 0;
                         product.Discount = 0;
                     }

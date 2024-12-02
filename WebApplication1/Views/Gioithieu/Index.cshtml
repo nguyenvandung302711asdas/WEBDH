@@ -1,0 +1,348 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.default.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .banner {
+            text-align: center;
+            position: relative;
+        }
+
+            .banner img {
+                width: 100%;
+                height: auto;
+            }
+
+        .carousel-wrapper {
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .owl-carousel .item {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .owl-carousel .owl-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .owl-stage-outer {
+            text-align: center;
+        }
+
+        .introbox1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 30px 0;
+        }
+
+        .introbox1l {
+            max-width: 50%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .introbox1__tit h3,
+        .introbox1__tit h2 {
+            text-align: center;
+            margin: 10px 0;
+            color: #f48120;
+        }
+
+        .introbox1__content {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .image_box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 50%;
+        }
+
+        .owl-carousel {
+            display: block;
+        }
+
+        .owl-item {
+            display: flex;
+            justify-content: center;
+        }
+
+            .owl-item img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .owl-nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+        }
+
+        .introbox5 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .introbox1__tit h3,
+        .introbox1__tit h2 {
+            color: #f48120;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Banner -->
+    <div class="banner">
+        <img src="https://www.watchstore.vn/images/landingpages/compress/section-1-bg-1-280449661-1321893921_1712625888.webp" alt="Watch Store Banner">
+    </div>
+
+    <div class="introbox1 mgminu">
+        <div class="introbox1l">
+            <div class="introbox1__tit">
+                <h3>THÀNH LẬP NĂM 2020</h3>
+                <h2>CAM KẾT 100% HÀNG CHÍNH HÃNG</h2>
+            </div>
+            <div class="introbox1__content">
+                <p>Trải qua nhiều năm thành lập, với những nỗ lực không ngừng, WatchStore.vn đã gặt hái nhiều thành công trong hoạt động kinh doanh và chiếm lĩnh trên thị trường.</p>
+                <p>WatchStore.vn đã đăng ký hoạt động thương mại điện tử với Bộ Công Thương (<a href="http://online.gov.vn/Home/WebDetails/75019" target="_blank" rel="nofollow noopener">Xem giấy phép đăng ký TMĐT với Bộ Công Thương</a>). Chúng tôi cam kết 100% sản phẩm chính hãng.</p>
+                <p><strong>Các cột mốc đáng ghi nhớ:</strong></p>
+                <p><strong>• Năm 2020</strong>: Trở thành đại lý bán lẻ chính thức của thương hiệu đồng hồ Casio do Công ty Cổ Phần Anh Khuê Watch chứng nhận.</p>
+                <p><strong>• Năm 2021</strong>: Được cấp giấy chứng nhận đại lý ủy quyền bán lẻ chính thức của các thương hiệu đồng hồ cao cấp Orient, Seiko.</p>
+                <p><strong>• Năm 2022</strong>: Chứng nhận đại lý chính hãng của các thương hiệu đồng hồ Frederique Constant, Srwatch, Freelook, Daniel Klein</p>
+                <p><strong>• Năm 2023</strong>: Đại lý ủy quyền chính thức của thương hiệu đồng hồ Citizen, Olym Pianus, Olympia Star, Ogival, Bentley, I&W Carnival.</p>
+            </div>
+        </div>
+
+        <div class="image_box">
+            <div class="list_image owl-carousel" id="list_image_cer">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="width: 4340px; transform: translate3d(0px, 0px, 0px); transition: all;">
+                        <div class="owl-item" style="width: 600px; margin-right: 20px;">
+                            <div class="item">
+                                <figure>
+                                    <img class="owl-lazy" src="https://www.watchstore.vn/images/landingpages/small/chung-nhan-certina_1712718922.jpeg" alt="Certina Official Authorized Dealer">
+                                </figure>
+                                <div class="thdx">Đại lý ủy quyền chính thức Certina</div>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 600px; margin-right: 20px;">
+                            <div class="item">
+                                <figure>
+                                    <img class="owl-lazy" src="https://www.watchstore.vn/images/landingpages/small/chung-nhan-freelook_1712718924.jpeg" alt="Freelook Official Authorized Dealer">
+                                </figure>
+                                <div class="thdx">Đại lý ủy quyền chính thức Freelook</div>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 600px; margin-right: 20px;">
+                            <div class="item">
+                                <figure>
+                                    <img class="owl-lazy" src="https://www.watchstore.vn/images/landingpages/small/chung-nhan-srwatch_1712718925.jpeg" alt="SR Watch Official Authorized Dealer">
+                                </figure>
+                                <div class="thdx">Đại lý ủy quyền chính thức SR watch</div>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 600px; margin-right: 20px;">
+                            <div class="item">
+                                <figure>
+                                    <img class="owl-lazy" src="https://www.watchstore.vn/images/landingpages/small/chung-nhan-orient_1712718925.jpeg" alt="Orient Official Authorized Dealer">
+                                </figure>
+                                <div class="thdx">Đại lý ủy quyền chính thức Orient</div>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 600px; margin-right: 20px;">
+                            <div class="item">
+                                <figure>
+                                    <img class="owl-lazy" src="https://www.watchstore.vn/images/landingpages/small/chung-nhan-seiko_1712718926.jpeg" alt="Seiko Official Authorized Dealer">
+                                </figure>
+                                <div class="thdx">Đại lý ủy quyền chính thức Seiko</div>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 600px; margin-right: 20px;">
+                            <div class="item">
+                                <figure>
+                                    <img class="owl-lazy" src="https://www.watchstore.vn/images/landingpages/small/chung-nhan-truong-hoan-1-_1712718929.jpeg" alt="Truong Hoan Official Authorized Dealer">
+                                </figure>
+                                <div class="thdx">Đại lý ủy quyền chính thức</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="block_albums albums-_albums albums_0 block" id="block_id_192">
+            <div class="grid-albums cf">
+                <div id="grid-albums" class="owl-carousel cls owl-loaded owl-drag">
+
+
+
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage" style="width: 4893px; transform: translate3d(-1529px, 0px, 0px); transition: all;">
+                            <div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_1">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/10-1531806116-342350087_1711878663.webp" src="https://www.watchstore.vn/images/albums/resized/10-1531806116-342350087_1711878663.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_2">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/8-1684183425-2141744429-1_1711878532.webp" src="https://www.watchstore.vn/images/albums/resized/8-1684183425-2141744429-1_1711878532.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_3">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/7-723871612-1337313133_1711878505.webp" src="https://www.watchstore.vn/images/albums/resized/7-723871612-1337313133_1711878505.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_4">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/6-96273303-1108068105_1711878483.webp" src="https://www.watchstore.vn/images/albums/resized/6-96273303-1108068105_1711878483.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_5">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/5-420469639-1679299960_1711878452.webp" src="https://www.watchstore.vn/images/albums/resized/5-420469639-1679299960_1711878452.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item active" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_0">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/11-1871112100-737619434_1711878831.webp" src="https://www.watchstore.vn/images/albums/resized/11-1871112100-737619434_1711878831.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item active" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_1">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/10-1531806116-342350087_1711878663.webp" src="https://www.watchstore.vn/images/albums/resized/10-1531806116-342350087_1711878663.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item active" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_2">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/8-1684183425-2141744429-1_1711878532.webp" src="https://www.watchstore.vn/images/albums/resized/8-1684183425-2141744429-1_1711878532.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item active" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_3">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/7-723871612-1337313133_1711878505.webp" src="https://www.watchstore.vn/images/albums/resized/7-723871612-1337313133_1711878505.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item active" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_4">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/6-96273303-1108068105_1711878483.webp" src="https://www.watchstore.vn/images/albums/resized/6-96273303-1108068105_1711878483.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_5">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/5-420469639-1679299960_1711878452.webp" src="https://www.watchstore.vn/images/albums/resized/5-420469639-1679299960_1711878452.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_0">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/11-1871112100-737619434_1711878831.webp" src="https://www.watchstore.vn/images/albums/resized/11-1871112100-737619434_1711878831.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_1">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/10-1531806116-342350087_1711878663.webp" src="https://www.watchstore.vn/images/albums/resized/10-1531806116-342350087_1711878663.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_2">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/8-1684183425-2141744429-1_1711878532.webp" src="https://www.watchstore.vn/images/albums/resized/8-1684183425-2141744429-1_1711878532.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_3">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/7-723871612-1337313133_1711878505.webp" src="https://www.watchstore.vn/images/albums/resized/7-723871612-1337313133_1711878505.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div><div class="owl-item cloned" style="width: 295.8px; margin-right: 10px;">
+                                <div class="item wrapper-block-item-customer item_album item_album_4">
+                                    <figure>
+                                        <img class="owl-lazy after-lazy" width="547" height="342" srcset="https://www.watchstore.vn/images/albums/resized/6-96273303-1108068105_1711878483.webp" src="https://www.watchstore.vn/images/albums/resized/6-96273303-1108068105_1711878483.jpeg" style="display: block; opacity: 1;">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 31.5C10.5442 31.5 4.5 25.4558 4.5 18C4.5 10.5442 10.5442 4.5 18 4.5C25.4558 4.5 31.5 10.5442 31.5 18C31.5 25.4558 25.4558 31.5 18 31.5Z" stroke="#333333" stroke-width="2" stroke-miterlimit="10"></path><path d="M17.1479 22.773L12.375 18L17.1479 13.2271" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M23.625 18H12.375" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" role="presentation" class="owl-next"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 31.5C25.4558 31.5 31.5 25.4558 31.5 18C31.5 10.5442 25.4558 4.5 18 4.5C10.5442 4.5 4.5 10.5442 4.5 18C4.5 25.4558 10.5442 31.5 18 31.5Z" stroke="#333333" stroke-width="2" stroke-miterlimit="10"></path><path d="M18.8521 22.773L23.625 18L18.8521 13.2271" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12.375 18H23.625" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div><div class="owl-dots disabled"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#list_image_cer').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 3, // Display 3 items at once
+            autoplay: true,
+            autoplayTimeout: 3000, // Adjust for the speed of the carousel
+        });
+    });
+</script>
